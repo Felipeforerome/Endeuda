@@ -1,0 +1,38 @@
+{% extends "blog/header.html" %}
+{% block content %}
+<div class="col-xs-12 col-md-10">
+	<div class='container-fluid'>
+		<div class="panel panel-default">
+			<div class="panel panel-body">
+				<h3 style="font-family:Monserrat; font-weight:bold; color:rgb(47,47,47)">
+					{{ post.title }}
+					<span class="badge" style="font-size:50%; font-family:Raleway; background-color:#337ab7
+					;">
+					{{post.get_tag_display}}
+				</span>
+			</h3>
+			<h6>{{ post.author }} | {{ post.date }}</h6>
+			<div class = "container-fluid" style="text-align: justify; line-height:150%;">
+				{% if post.photo %}
+				<hr>
+				<img src="{{post.photo.url}}" class="responsive-img" style='max-height:200px;'>
+                {% if post.source_of_the_photo %}
+				<h6>Fuente: {{post.source_of_the_photo}}</h6>
+                {% endif %}
+				{% endif %}
+				<hr>
+				{{ post.body|linebreaks}}
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<br><br>
+<div class="col-xs-12 col-md-10">
+	<div class='container-fluid'>
+		<div class="panel panel-default">
+			<div class="fb-comments" data-href="{{request.build_absolute_url}}" data-numposts="5"></div>
+		</div>
+	</div>
+</div>		
+{% endblock %}

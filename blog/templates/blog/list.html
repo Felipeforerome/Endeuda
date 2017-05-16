@@ -1,0 +1,84 @@
+{% extends "blog/header.html" %}
+{% block content %}
+<div class="col-xs-12 col-md-9">
+  <div class='container-fluid'>
+    <div class="panel panel-default">
+      {% for post in posts %}
+      {% if post.photo %}
+      <div class="col-xs-6 col-md-3">
+      <br>
+        <center>
+          <a href="/post/{{post.id}}" class="img-rounded">
+            <img src="{{post.photo.url}}" class="responsive-img" style="max-width:100%; max-height:100%">
+          </a>
+        </center>
+      </div>
+      {% endif %}
+      <div class="panel panel-body">
+        <h3>
+          <a href="/post/{{post.id}}" style="font-family:Monserrat; font-weight:bold; color:rgb(47,47,47)">{{ post.title }}
+          </a>
+          <span class="badge" style="font-size:50%; font-family:Raleway; background-color:#337ab7
+          ;">
+          {{post.get_tag_display}}
+        </span>
+      </h3>
+      <h5 style="font-family:Raleway">{{ post.description }}</h5>
+      <h6>{{ post.date|date:"d-M-Y" }}</h6>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+<div class=" visible-md-block visible-lg-block col-hidden-sm col-md-3" >
+  <div class="panel panel-default">
+      {% for freq in freqs %}
+      {% if freq.photo %}
+      <div>
+        <center>
+          <a href="/post/{{freq.id}}" class="img-rounded">
+            <img src="{{freq.photo.url}}" class="responsive-img" style="max-width:100%; max-height:100%">
+          </a>
+        </center>
+      </div>
+      {% endif %}
+      <div class="panel panel-body">
+        <h3>
+          <a href="/post/{{freq.id}}" style="font-family:Monserrat; font-weight:bold; color:rgb(47,47,47)">{{ freq.title }}
+          </a>
+          <span class="badge" style="font-size:50%; font-family:Raleway; background-color:#337ab7
+          ;">
+          {{freq.get_tag_display}}
+        </span>
+      </h3>
+      <h5 style="font-family:Raleway">{{ freq.description }}</h5>
+      <h6>{{ freq.date|date:"d-M-Y" }}</h6>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block paginator %}
+<center>
+  <div class="pagination">
+    <span class="step-links">
+      {% if posts.has_previous %}
+      <a href="?page={{ posts.previous_page_number }}" aria-label="Anterior">
+        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+      </a>
+      {% endif %}
+
+      <span class="current">
+        Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+      </span>
+
+      {% if posts.has_next %}
+      <a href="?page={{ posts.next_page_number }}" aria-label="Siguiente">
+        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+      </a>
+      {% endif %}
+    </span>
+  </div>
+</center>
+{% endblock %}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>EnDeuda | Ponemos en duda o asumimos la deuda.</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script   src="https://code.jquery.com/jquery-3.1.0.slim.min.js"   integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		html,
+		body {
+			height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:rgb(222,222,222);">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid"  style="background-color:rgb(47,47,47); font-family:Raleway">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/" style="background-color:white;">
+				<img src="{% static 'blog/img/logo.png' %}" class="responsive-img" style='max-height:20px;' alt="Logo">
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="">Categorías <span class="caret"></span></a>
+					<ul class="dropdown-menu" style="background-color:white;">
+						<li><a href='/' style="color:black">Inicio</a></li>
+						<li><a href='/almargen/' style="color:black">Al Margen</a></li>
+						<li><a href='/cyt/' style="color:black">Ciencia y </br> Tecnología</a></li>
+						<li><a href='/cnv/' style="color:black">Como Nos Ven</a></li>
+						<li><a href='/econoinf/' style="color:black">Econoinformal</a></li>
+						<li><a href='/editorial/' style="color:black">Editorial</a></li>
+						<li><a href='/elbobo/' style="color:black">El Bobo</a></li>
+						<li><a href='/elintruso/' style="color:black">El Intruso</a></li>
+						<li><a href='/elw/' style="color:black">El W</a></li>
+						<li><a href='/endebate/' style="color:black">En Deb(a)te</a></li>
+						<li><a href='/exogeno/' style="color:black">Exógeno</a></li>
+						<li><a href='/opinion/' style="color:black">Opinion</a></li>
+						<li><a href='/personajes/' style="color:black">Personajes</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li style="background-color:rgb(47,47,47); font-family:Raleway"> <a tabindex="0" class="visible-sm-block visible-md-block visible-lg-block col-hidden-xs " role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="left" title="¿QUÉ ES EL PERIODICO ENDEUDA?"  data-content="EnD(e)uda nació en el año 2011 cuando un grupo de estudiantes de la Facultad de Economía de la Universidad de los Andes se unieron para poner en duda lo que estaban aprendiendo, su entorno inmediato -la universidad- y su contexto más amplio -la realidad del país. Poner en duda o asumir la deuda de quedarse callado se convirtió en el lema del periódico que surgió de esas inquietudes. Desde sus inicios, el periódico se publica dos veces por semestre buscando incluir temas de actualidad, de vida universitaria y del día a día en la facultad. Sin dejar de lado la rigurosidad –económica y periodística-, en EnD(e)uda nos esforzamos por mantener una posición crítica, plural y que dé cabida a todas las voces y todos los lectores.">Nosotros</a>
+				</li>
+				<li style="bont-family:Raleway"><a tabindex="0" class="visible-xs-block col-hidden-md col-hidden-lg " role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="bottom" title="¿QUÉ ES EL PERIODICO ENDEUDA?"  data-content="EnD(e)uda nació en el año 2011 cuando un grupo de estudiantes de la Facultad de Economía de la Universidad de los Andes se unieron para poner en duda lo que estaban aprendiendo, su entorno inmediato -la universidad- y su contexto más amplio -la realidad del país. Poner en duda o asumir la deuda de quedarse callado se convirtió en el lema del periódico que surgió de esas inquietudes. Desde sus inicios, el periódico se publica dos veces por semestre buscando incluir temas de actualidad, de vida universitaria y del día a día en la facultad. Sin dejar de lado la rigurosidad –económica y periodística-, en EnD(e)uda nos esforzamos por mantener una posición crítica, plural y que dé cabida a todas las voces y todos los lectores." style="font-family:Raleway color:white;">Nosotros</a>
+				</li>
+			</ul>
+			<ul class="navbar-right" style='max-width:20%; margin-top: -10px;'>
+				<li>
+					<script>
+                        (function() {
+                            var cx = '017529996612677751822:zsjit97tbti';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                        })();
+					</script>
+					<gcse:searchbox-only></gcse:searchbox-only>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav><hr>
+<div class="container-fluid" style="min-height:95%; ">
+	<div class="row">
+		<div class="jumbotron">
+			<br>
+			<center>
+				<img src="{% static 'blog/img/logo.png' %}" class="responsive-img" style='max-height:125px; min-height: 10px;%' alt="Logo">
+				<div class="row visible-md-block visible-lg-block col-hidden-sm" style="font-family:Raleway">
+					<hr style="border-color:rgb(47,47,47); background-color:rgb(47,47,47); width:80%">
+					<a href='/' style="color:black;">Inicio</a>
+					<a href='/almargen/' style="color:black; margin-left: 5%;">Al Margen</a>
+					<a href='/cyt/' style="color:black; margin-left: 5%;">Ciencia y Tecnología</a>
+					<a href='/cnv/' style="color:black; margin-left: 5%;">Como Nos Ven</a>
+					<a href='/econoinf/' style="color:black; margin-left: 5%;">Econoinformal</a>
+					<a href='/editorial/' style="color:black; margin-left: 5%;">Editorial</a></br>
+					<a href='/elbobo/' style="color:black;">El Bobo</a>
+					<a href='/elintruso/' style="color:black; margin-left: 5%;">El Intruso</a>
+					<a href='/elw/' style="color:black; margin-left: 5%;">El W</a>
+					<a href='/endebate/' style="color:black; margin-left: 5%;">En Deb(a)te</a>
+					<a href='/exogeno/' style="color:black; margin-left: 5%;">Exógeno</a>
+					<a href='/opinion/' style="color:black; margin-left: 5%;">Opinion</a>
+					<a href='/personajes/' style="color:black; margin-left: 5%;">Personajes</a>
+				</div>
+			</center>
+		</div>
+	</div>
+
+	<div class="row" style="margin:5%;">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+</div>
+<div class="row">
+	{% block paginator%}
+	{% endblock %}
+</div>
+<hr>
+<div class="row">
+	<footer>
+		<div class="container" style='margin-left:15px'>
+			Siguenos en: <a href="http://www.facebook.com/EnDeuda/" target="blank">Facebook</a>
+		</div>
+	</footer>
+</div>
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover( )
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-90534213-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

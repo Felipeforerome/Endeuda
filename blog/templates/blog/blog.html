@@ -1,0 +1,16 @@
+{% extends "personal/header.html" %}
+{% block content %}
+	{% for post in object_list %}
+	<div class="panel panel-default">
+	{% if post.photo %}
+		<img src="{{post.photo.url}}" class="responsive-img" style='max-height:100px;'>
+	{% endif %}
+		<div class="panel panel-body"
+			<h3><a href="/blog/{{post.id}}">  {{ post.title }}</a></h3>
+			<h4>{{post.description}}</h4>
+			<h6>{{ post.date|date:"Y-m-d" }}</h6>
+		</div>
+	</div>
+	{% endfor %}
+	{% include 'blog/list.html' %}
+{% endblock %}
